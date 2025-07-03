@@ -200,8 +200,8 @@ def train(net, X_train, y_train):
 
 def OnlineLearning(fileName):
     data = np.load(fileName)
-    X_train = torch.tensor(torch.from_numpy(data["x_train"][0:1000]), dtype=torch.float32)
-    y_train = torch.tensor(torch.from_numpy(data["y_train"][0:1000]), dtype=torch.float32)
+    X_train = torch.tensor(torch.from_numpy(data["x_train"]), dtype=torch.float32)
+    y_train = torch.tensor(torch.from_numpy(data["y_train"]), dtype=torch.float32)
     num_inputs = X_train[0].shape[0]
     num_outputs = y_train[0].shape[0]
     num_hiddens = 256
